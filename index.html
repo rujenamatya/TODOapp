@@ -9,9 +9,16 @@
     </head>
     <body>
         <div id="vueApp">
-            <h1 class="welcome">{{welcomeMessage}}</h1>
-            <input class="welcome" v-model="welcomeMessage" />
+            <h1 v-text="title"></h1>-->
+            <input v-model="newItem" v-on:keyup.enter='addItem' />
+            <span><button @click.prevent="addItem">Add</button></span>
+            <h3>List:</h3>
+
+            <ul v-for="list in lists" v-bind:key="list.id">
+                <li><input type="checkbox"> &nbsp {{list.item}} &nbsp <button @click.prevent="removeItem" type="button">Remove</button> </li>
+            </ul>
         </div>
+
 
 
         <script src="js/vue.min.js"></script>
