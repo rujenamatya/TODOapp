@@ -15,7 +15,7 @@
             <h3>List:</h3>
 
             <ul v-for="list in lists" v-bind:key="list.id">
-                <li><input type="checkbox"> &nbsp {{list.item}} &nbsp <button @click.prevent="removeItem" type="button">Remove</button> </li>
+                <li><input type="checkbox"> &nbsp {{list.item}} &nbsp <button @click.prevent="removeItem(list)" type="button">Remove</button> </li>
             </ul>
         </div>
 

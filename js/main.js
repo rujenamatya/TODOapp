@@ -19,8 +19,9 @@ let app = new Vue({
                 this.newItem = ''
             }
         },
-        removeItem:function(){
-            
+        removeItem:function(val){
+            var index = this.lists.indexOf(val)
+            this.lists.splice(index, 1)
         }
 
     },
