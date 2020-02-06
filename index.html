@@ -9,9 +9,10 @@
     </head>
     <body>
         <div id="vueApp">
-            <h1 v-text="title"></h1>-->
+            <h1 v-text="title"></h1>
+            <p>-->
             <input v-model="newItem" v-on:keyup.enter='addItem' />
-            <span><button @click.prevent="addItem">Add</button></span>
+            <span><button @click.prevent="addItem">Add</button></span></p>
             <h3>List:</h3>
 
             <ul v-for="list in lists" v-bind:key="list.id">
