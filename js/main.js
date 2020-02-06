@@ -30,6 +30,7 @@ let app = new Vue({
             localStorage.setItem('lists', parsed);
         }
 
+        
     },
     mounted() {
         if (localStorage.getItem('lists')) {
