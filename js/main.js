@@ -2,7 +2,7 @@ let app = new Vue({
     el: "#vueApp",
     data: {
         //welcomeMessage: 'TODO Items',
-        title: 'Simple TODO list',
+        title: 'Simple TODO List',
         lists: [
             {id:1, item:'complete assignment'},
             {id:2, item:'submit homework'},
@@ -17,15 +17,27 @@ let app = new Vue({
                 const newList = {id:id, item:this.newItem}
                 this.lists.push(newList)
                 this.newItem = ''
+                this.saveItems()
             }
         },
-        removeItem:function(val){
+        removesItem:function(val){
             var index = this.lists.indexOf(val)
             this.lists.splice(index, 1)
+            this.saveItems()
+        },
+        saveItems:function(){
+            const parsed = JSON.stringify(this.lists);
+            localStorage.setItem('lists', parsed);
         }
 
     },
     mounted() {
-
+        if (localStorage.getItem('lists')) {
+            try {
+              this.lists = JSON.parse(localStorage.getItem('lists'));
+            } catch(e) {
+              localStorage.removeItem('lists');
+            }
+          }
     },
 });
