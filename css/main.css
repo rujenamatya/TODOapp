@@ -2,13 +2,15 @@ h1{
     text-align:center; 
     color: #5534c9; 
     background-color: #eaf553; 
-    border:1px solid #5534c9
+    border:1px solid #5534c9;
+    font-size: 30pt
 }
 
 h3{
     text-align:center; 
     color: #d13c34; 
-    border:1px solid #000000
+    border:1px solid #000000;
+    font-size: 20pt
 }
 
 button{color: #5534c9; 
@@ -27,6 +29,11 @@ button:hover{
 p{
     text-align: center;
 }
+
+ul{
+    font-size: 15pt;
+}
+
 
 
 
